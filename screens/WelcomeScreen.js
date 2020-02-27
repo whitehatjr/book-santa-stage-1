@@ -12,7 +12,7 @@ export default class WelcomeScreen extends Component {
     }
   }
 
-  userLogin = async(emailId, password)=>{
+  userLogin = (emailId, password)=>{
     firebase.auth().signInWithEmailAndPassword(emailId, password)
     .then(()=>{
       return Alert.alert("Successfully Login")
