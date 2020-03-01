@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity,TextInput, Alert } from 'react-native';
+import SnataAnimation from './SnataClaus.js';
 import db from '../config';
 import firebase from 'firebase';
 
@@ -43,7 +44,7 @@ export default class WelcomeScreen extends Component {
       <View style={styles.container}>
         <View style={styles.profileContainer}>
           <Text style={styles.title}>Book Santa</Text>
-          <Image source={require('../assets/logo.png')} style={styles.appLogo}/>
+          <SnataAnimation/>
         </View>
         <View style={styles.buttonContainer}>
           <TextInput
@@ -89,7 +90,7 @@ export default class WelcomeScreen extends Component {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#ffab91'
+    backgroundColor:'#00e5ff'
   },
   profileContainer:{
     flex:1,
@@ -101,11 +102,7 @@ const styles = StyleSheet.create({
     fontWeight:'200',
     fontFamily:'Thonburi',
     paddingBottom:30,
-  },
-  appLogo:{
-    width:200,
-    height:200,
-    borderRadius:100
+    color : '#ff9800'
   },
   loginBox:{
     width: 300,
@@ -121,7 +118,8 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     borderWidth:1,
-    borderRadius:10
+    borderRadius:10,
+    backgroundColor:"#ff9800"
   },
   buttonContainer:{
     flex:1,
