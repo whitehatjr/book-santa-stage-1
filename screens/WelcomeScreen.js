@@ -43,13 +43,14 @@ export default class WelcomeScreen extends Component {
     return(
       <View style={styles.container}>
         <View style={styles.profileContainer}>
-          <Text style={styles.title}>Book Santa</Text>
           <SantaAnimation/>
+          <Text style={styles.title}>Book Santa</Text>
         </View>
         <View style={styles.buttonContainer}>
           <TextInput
           style={styles.loginBox}
-          placeholder="abc@example.com"
+          placeholder="example@booksanta.com"
+          placeholderTextColor = "#ffff"
           keyboardType ='email-address'
           onChangeText={(text)=>{
             this.setState({
@@ -61,7 +62,8 @@ export default class WelcomeScreen extends Component {
         <TextInput
           style={styles.loginBox}
           secureTextEntry = {true}
-          placeholder="enter Password"
+          placeholder="password"
+          placeholderTextColor = "#ffff"
           onChangeText={(text)=>{
             this.setState({
               password: text
@@ -69,16 +71,16 @@ export default class WelcomeScreen extends Component {
           }}
         />
           <TouchableOpacity
-            style={[styles.button,{marginBottom:10}]}
+            style={[styles.button,{marginBottom:20, marginTop:20}]}
             onPress = {()=>{this.userLogin(this.state.emailId, this.state.password)}}
             >
-            <Text>Login</Text>
+            <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={()=>{this.userSignUp(this.state.emailId, this.state.password)}}
             >
-            <Text>SignUp</Text>
+            <Text style={styles.buttonText}>SignUp</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -90,7 +92,7 @@ export default class WelcomeScreen extends Component {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#00e5ff'
+    backgroundColor:'#F8BE85'
   },
   profileContainer:{
     flex:1,
@@ -98,27 +100,40 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   title :{
-    fontSize:55,
-    fontWeight:'200',
+    fontSize:65,
+    fontWeight:'300',
     paddingBottom:30,
-    color : '#ff9800'
+    color : '#ff3d00'
   },
   loginBox:{
     width: 300,
     height: 40,
-    borderWidth: 1.5,
+    borderBottomWidth: 1.5,
+    borderColor : '#ff8a65',
     fontSize: 20,
     margin:10,
     paddingLeft:10
   },
   button:{
-    width:200,
+    width:300,
     height:50,
     justifyContent:'center',
     alignItems:'center',
-    borderWidth:1,
-    borderRadius:10,
-    backgroundColor:"#ff9800"
+    borderRadius:25,
+    backgroundColor:"#ff9800",
+    shadowColor: "#000",
+    shadowOffset: {
+       width: 0,
+       height: 8,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 10.32,
+    elevation: 16,
+  },
+  buttonText:{
+    color:'#ffff',
+    fontWeight:'200',
+    fontSize:20
   },
   buttonContainer:{
     flex:1,
