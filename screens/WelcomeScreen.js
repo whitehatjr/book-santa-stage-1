@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity,TextInput, Alert } from 'react-native';
-import SnataAnimation from './SnataClaus.js';
+import SantaAnimation from '../components/SantaClaus.js';
 import db from '../config';
 import firebase from 'firebase';
 
@@ -44,7 +44,7 @@ export default class WelcomeScreen extends Component {
       <View style={styles.container}>
         <View style={styles.profileContainer}>
           <Text style={styles.title}>Book Santa</Text>
-          <SnataAnimation/>
+          <SantaAnimation/>
         </View>
         <View style={styles.buttonContainer}>
           <TextInput
@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
   title :{
     fontSize:55,
     fontWeight:'200',
-    fontFamily:'Thonburi',
     paddingBottom:30,
     color : '#ff9800'
   },

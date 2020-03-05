@@ -1,7 +1,7 @@
 import React from 'react';
 import LottieView from 'lottie-react-native';
 
-export default class SnataAnimation extends React.Component {
+export default class SantaAnimation extends React.Component {
   render() {
     return (
       <LottieView
